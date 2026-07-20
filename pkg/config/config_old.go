@@ -42,7 +42,7 @@ func v0ProvidersMapToModelList(providers map[string]any, userProvider, userModel
 		{
 			jsonKeys: []string{"openai", "gpt"},
 			protocol: "openai",
-			defModel: "openai/gpt-5.4",
+			defModel: "openai/gpt-5.6-terra",
 			extractFn: func(prov map[string]any) map[string]any {
 				entry := make(map[string]any)
 				if v, ok := prov["api_key"]; ok && v != "" {
@@ -69,7 +69,7 @@ func v0ProvidersMapToModelList(providers map[string]any, userProvider, userModel
 		{
 			jsonKeys: []string{"anthropic", "claude"},
 			protocol: "anthropic",
-			defModel: "anthropic/claude-sonnet-4.6",
+			defModel: "anthropic/claude-sonnet-5",
 			extractFn: func(prov map[string]any) map[string]any {
 				entry := make(map[string]any)
 				if v, ok := prov["api_key"]; ok && v != "" {
@@ -303,7 +303,7 @@ func v0ProvidersMapToModelList(providers map[string]any, userProvider, userModel
 		{
 			jsonKeys: []string{"deepseek"},
 			protocol: "deepseek",
-			defModel: "deepseek/deepseek-chat",
+			defModel: "deepseek/deepseek-v4-flash",
 			extractFn: func(prov map[string]any) map[string]any {
 				entry := make(map[string]any)
 				if v, ok := prov["api_key"]; ok && v != "" {
@@ -387,7 +387,7 @@ func v0ProvidersMapToModelList(providers map[string]any, userProvider, userModel
 		{
 			jsonKeys: []string{"github_copilot", "copilot"},
 			protocol: "github-copilot",
-			defModel: "github-copilot/gpt-5.4",
+			defModel: "github-copilot/gpt-5.6-terra",
 			extractFn: func(prov map[string]any) map[string]any {
 				entry := make(map[string]any)
 				if v, ok := prov["api_key"]; ok && v != "" {
@@ -504,7 +504,7 @@ func v0ProvidersMapToModelList(providers map[string]any, userProvider, userModel
 		{
 			jsonKeys: []string{"longcat"},
 			protocol: "longcat",
-			defModel: "longcat/LongCat-Flash-Thinking",
+			defModel: "longcat/LongCat-2.0",
 			extractFn: func(prov map[string]any) map[string]any {
 				entry := make(map[string]any)
 				if v, ok := prov["api_key"]; ok && v != "" {

@@ -661,10 +661,10 @@ PicoClaw supports separating sensitive data (API keys, tokens, secrets) from you
 1. Create `~/.picoclaw/.security.yml` with your API keys:
 ```yaml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "sk-proj-your-actual-openai-key"
-  claude-sonnet-4.6:
+  claude-sonnet-5:
     api_keys:
       - "sk-ant-your-actual-anthropic-key"
 channels:
@@ -688,9 +688,9 @@ chmod 600 ~/.picoclaw/.security.yml
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.6-terra"
       // api_key loaded from .security.yml
     }
   ],
@@ -752,15 +752,15 @@ For complete documentation, see [`../security/security_configuration.md`](../sec
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
       "provider": "anthropic",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -772,7 +772,7 @@ For complete documentation, see [`../security/security_configuration.md`](../sec
   ],
   "agents": {
     "defaults": {
-      "model": "gpt-5.4"
+      "model": "gpt-5.6-terra"
     }
   }
 }
@@ -784,10 +784,10 @@ For complete documentation, see [`../security/security_configuration.md`](../sec
 
 Resolution rules:
 
-- Prefer explicit `"provider": "openai", "model": "gpt-5.4"`.
+- Prefer explicit `"provider": "openai", "model": "gpt-5.6-terra"`.
 - If `provider` is set, PicoClaw sends `model` unchanged.
 - If `provider` is omitted, PicoClaw treats the first `/` segment in `model` as the provider and everything after that first `/` as the runtime model ID.
-- This means `"model": "openrouter/openai/gpt-5.4"` still works as a compatibility form and sends `openai/gpt-5.4` to OpenRouter.
+- This means `"model": "openrouter/openai/gpt-5.6-terra"` still works as a compatibility form and sends `openai/gpt-5.6-terra` to OpenRouter.
 
 #### Streaming Configuration
 
@@ -803,9 +803,9 @@ Opt-in example:
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"],
       "streaming": {
         "enabled": true
@@ -850,9 +850,9 @@ For model-specific TTS request fields such as custom speech `voice` names or
 
 ```json
 {
-  "model_name": "gpt-5.4",
+  "model_name": "gpt-5.6-terra",
   "provider": "openai",
-  "model": "gpt-5.4"
+  "model": "gpt-5.6-terra"
   // api_key: set in .security.yml
 }
 ```
@@ -921,9 +921,9 @@ Pair this with:
 
 ```json
 {
-  "model_name": "deepseek-chat",
+  "model_name": "deepseek-v4-flash",
   "provider": "deepseek",
-  "model": "deepseek-chat"
+  "model": "deepseek-v4-flash"
   // api_key: set in .security.yml
 }
 ```
@@ -935,9 +935,9 @@ Pair this with:
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
   "provider": "anthropic",
-  "model": "claude-sonnet-4.6"
+  "model": "claude-sonnet-5"
   // api_key: set in .security.yml
 }
 ```
@@ -1015,7 +1015,7 @@ Configure multiple endpoints for the same model name — PicoClaw will automatic
 ```yaml
 # .security.yml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "sk-proj-key-1"
       - "sk-proj-key-2"
@@ -1026,9 +1026,9 @@ model_list:
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api.openai.com/v1"
       // api_keys loaded from .security.yml
     }
@@ -1042,16 +1042,16 @@ model_list:
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }

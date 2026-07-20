@@ -70,7 +70,7 @@ This guide explains how to configure both for real deployments.
     {
       "model_name": "gpt-main",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-main"]
     },
     {

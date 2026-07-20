@@ -370,13 +370,13 @@ Cela crée `~/.picoclaw/config.json` et le répertoire workspace.
   "version": 3,
   "agents": {
     "defaults": {
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   },
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_keys": ["sk-your-api-key"]
     }
   ]

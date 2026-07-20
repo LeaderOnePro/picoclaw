@@ -34,11 +34,11 @@ File: ~/.picoclaw/.security.yml
 # Even a single key must be provided as an array with one element
 model_list:
 
-	gpt-5.4:
+	gpt-5.6-terra:
 	  api_keys:
 	    - "sk-proj-your-actual-openai-key-1"
 	    - "sk-proj-your-actual-openai-key-2"  # Optional: Multiple keys for failover
-	claude-sonnet-4.6:
+	claude-sonnet-5:
 	  api_keys:
 	    - "sk-ant-your-actual-anthropic-key"  # Single key in array format
 
@@ -88,19 +88,19 @@ Note: Sensitive fields are omitted because they're loaded from .security.yml
 	  "agents": {
 	    "defaults": {
 	      "workspace": "~/picoclaw-workspace",
-	      "model_name": "gpt-5.4"
+	      "model_name": "gpt-5.6-terra"
 	    }
 	  },
 	  "model_list": [
 	    {
-	      "model_name": "gpt-5.4",
-	      "model": "openai/gpt-5.4",
+	      "model_name": "gpt-5.6-terra",
+	      "model": "openai/gpt-5.6-terra",
 	      "api_base": "https://api.openai.com/v1"
 	      // api_key is automatically loaded from .security.yml
 	    },
 	    {
-	      "model_name": "claude-sonnet-4.6",
-	      "model": "anthropic/claude-sonnet-4.6",
+	      "model_name": "claude-sonnet-5",
+	      "model": "anthropic/claude-sonnet-5",
 	      "api_base": "https://api.anthropic.com/v1"
 	      // api_key is automatically loaded from .security.yml
 	    }
@@ -178,11 +178,11 @@ Examples:
 ```yaml
 model_list:
 
-	gpt-5.4:
+	gpt-5.6-terra:
 	  api_keys:
 	    - "sk-proj-key-1"
 	    - "sk-proj-key-2"
-	claude-sonnet-4.6:
+	claude-sonnet-5:
 	  api_keys:
 	    - "sk-ant-key"
 
@@ -385,7 +385,7 @@ You can configure multiple API keys for models and web tools to enable:
 ```yaml
 model_list:
 
-	gpt-5.4:
+	gpt-5.6-terra:
 	  api_keys:
 	    - "sk-proj-key-1"
 	    - "sk-proj-key-2"
@@ -399,8 +399,8 @@ model_list:
 	{
 	  "model_list": [
 	    {
-	      "model_name": "gpt-5.4",
-	      "model": "openai/gpt-5.4",
+	      "model_name": "gpt-5.6-terra",
+	      "model": "openai/gpt-5.6-terra",
 	      "api_base": "https://api.openai.com/v1"
 	    }
 	  ]
@@ -453,7 +453,7 @@ web:
 ```yaml
 model_list:
 
-	gpt-5.4:
+	gpt-5.6-terra:
 	  api_keys:
 	    - "sk-proj-your-key"  # Single key in array format
 
@@ -478,7 +478,7 @@ The system supports intelligent model name matching in .security.yml:
 ```json
 
 	{
-	  "model_name": "gpt-5.4:0"
+	  "model_name": "gpt-5.6-terra:0"
 	}
 
 ```
@@ -487,7 +487,7 @@ The system supports intelligent model name matching in .security.yml:
 ```yaml
 model_list:
 
-	gpt-5.4:0:
+	gpt-5.6-terra:0:
 	  api_keys: ["key-1"]
 
 ```
@@ -498,7 +498,7 @@ model_list:
 ```json
 
 	{
-	  "model_name": "gpt-5.4:0"
+	  "model_name": "gpt-5.6-terra:0"
 	}
 
 ```
@@ -507,7 +507,7 @@ model_list:
 ```yaml
 model_list:
 
-	gpt-5.4:
+	gpt-5.6-terra:
 	  api_keys: ["key-1", "key-2"]
 
 ```
@@ -565,7 +565,7 @@ and .security.yml values.
 ## Error: "model security entry not found"
 - Check that the model name in config.json matches exactly in .security.yml
 - Verify the model_list section exists in .security.yml
-- For indexed names (e.g., "gpt-5.4:0"), check both exact match and base name match
+- For indexed names (e.g., "gpt-5.6-terra:0"), check both exact match and base name match
 - Ensure the YAML structure is correct (proper indentation)
 
 ## Multiple API Keys Not Working

@@ -388,7 +388,7 @@ func TestNewProvider(t *testing.T) {
 func TestGetDefaultModel(t *testing.T) {
 	provider := NewProvider("test-key", "", "")
 	got := provider.GetDefaultModel()
-	expected := "claude-sonnet-4.6"
+	expected := "claude-sonnet-5"
 	if got != expected {
 		t.Errorf("GetDefaultModel() = %q, want %q", got, expected)
 	}

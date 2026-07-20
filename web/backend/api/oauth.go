@@ -777,16 +777,16 @@ func defaultModelConfigForProvider(provider, authMethod string) *config.ModelCon
 	switch provider {
 	case oauthProviderOpenAI:
 		return &config.ModelConfig{
-			ModelName:  "gpt-5.4",
+			ModelName:  "gpt-5.6-terra",
 			Provider:   "openai",
-			Model:      "gpt-5.4",
+			Model:      "gpt-5.6-terra",
 			AuthMethod: authMethod,
 		}
 	case oauthProviderAnthropic:
 		return &config.ModelConfig{
-			ModelName:  "claude-sonnet-4.6",
+			ModelName:  "claude-sonnet-5",
 			Provider:   "anthropic",
-			Model:      "claude-sonnet-4.6",
+			Model:      "claude-sonnet-5",
 			AuthMethod: authMethod,
 		}
 	case oauthProviderGoogleAntigravity:

@@ -20,8 +20,8 @@ Use this skill immediately when the user asks any of:
 ## Quick start
 
 ```bash
-summarize "https://example.com" --model google/gemini-3-flash-preview
-summarize "/path/to/file.pdf" --model google/gemini-3-flash-preview
+summarize "https://example.com" --model google/gemini-3.5-flash
+summarize "/path/to/file.pdf" --model google/gemini-3.5-flash
 summarize "https://youtu.be/dQw4w9WgXcQ" --youtube auto
 ```
 
@@ -43,7 +43,7 @@ Set the API key for your chosen provider:
 - xAI: `XAI_API_KEY`
 - Google: `GEMINI_API_KEY` (aliases: `GOOGLE_GENERATIVE_AI_API_KEY`, `GOOGLE_API_KEY`)
 
-Default model is `google/gemini-3-flash-preview` if none is set.
+Default model is `google/gemini-3.5-flash` if none is set.
 
 ## Useful flags
 
@@ -59,7 +59,7 @@ Default model is `google/gemini-3-flash-preview` if none is set.
 Optional config file: `~/.summarize/config.json`
 
 ```json
-{ "model": "openai/gpt-5.4" }
+{ "model": "openai/gpt-5.6-terra" }
 ```
 
 Optional services:

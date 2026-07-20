@@ -151,7 +151,7 @@ func (p *Provider) Chat(
 
 // GetDefaultModel returns the default model for this provider.
 func (p *Provider) GetDefaultModel() string {
-	return "claude-sonnet-4.6"
+	return "claude-sonnet-5"
 }
 
 // buildRequestBody converts internal message format to Anthropic Messages API format.

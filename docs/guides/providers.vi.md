@@ -76,13 +76,13 @@ Thiết kế này cũng cho phép **hỗ trợ đa agent** với lựa chọn pr
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
+      "model": "anthropic/claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -93,7 +93,7 @@ Thiết kế này cũng cho phép **hỗ trợ đa agent** với lựa chọn pr
   ],
   "agents": {
     "defaults": {
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   }
 }
@@ -104,7 +104,7 @@ Thiết kế này cũng cho phép **hỗ trợ đa agent** với lựa chọn pr
 | Trường | Kiểu | Bắt buộc | Mô tả |
 |--------|------|----------|------|
 | `model_name` | string | Có | Tên duy nhất để tham chiếu model này trong cấu hình agent |
-| `model` | string | Có | Định danh nhà cung cấp/model (ví dụ: `openai/gpt-5.4`, `azure/gpt-5.4`, `anthropic/claude-sonnet-4.6`) |
+| `model` | string | Có | Định danh nhà cung cấp/model (ví dụ: `openai/gpt-5.6-terra`, `azure/gpt-5.6-terra`, `anthropic/claude-sonnet-5`) |
 | `api_keys` | string[] | Có* | Khóa API xác thực. Nhiều khóa cho phép xoay vòng theo yêu cầu. Không cần thiết cho provider nội bộ (Ollama, LM Studio, VLLM) |
 | `api_base` | string | Không | Ghi đè URL endpoint API mặc định |
 | `proxy` | string | Không | URL proxy HTTP cho entry model này |
@@ -126,8 +126,8 @@ Khi không dùng streaming, hãy bỏ qua block `streaming`. Viết `"streaming"
 
 ```json
 {
-  "model_name": "gpt-5.4",
-  "model": "openai/gpt-5.4",
+  "model_name": "gpt-5.6-terra",
+  "model": "openai/gpt-5.6-terra",
   "api_keys": ["sk-..."]
 }
 ```
@@ -156,8 +156,8 @@ Khi không dùng streaming, hãy bỏ qua block `streaming`. Viết `"streaming"
 
 ```json
 {
-  "model_name": "deepseek-chat",
-  "model": "deepseek/deepseek-chat",
+  "model_name": "deepseek-v4-flash",
+  "model": "deepseek/deepseek-v4-flash",
   "api_keys": ["sk-..."]
 }
 ```
@@ -166,8 +166,8 @@ Khi không dùng streaming, hãy bỏ qua block `streaming`. Viết `"streaming"
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
-  "model": "anthropic/claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
+  "model": "anthropic/claude-sonnet-5",
   "api_keys": ["sk-ant-your-key"]
 }
 ```
@@ -237,14 +237,14 @@ Cấu hình nhiều endpoint cho cùng tên mô hình — PicoClaw sẽ tự đ�
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }

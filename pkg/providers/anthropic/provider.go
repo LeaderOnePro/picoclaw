@@ -131,7 +131,7 @@ func (p *Provider) chatStreaming(
 }
 
 func (p *Provider) GetDefaultModel() string {
-	return "claude-sonnet-4.6"
+	return "claude-sonnet-5"
 }
 
 func (p *Provider) BaseURL() string {

@@ -18,7 +18,7 @@ import (
 
 const (
 	supportedProvidersMsg = "supported providers: openai, anthropic, google-antigravity, antigravity"
-	defaultAnthropicModel = "claude-sonnet-4.6"
+	defaultAnthropicModel = "claude-sonnet-5"
 )
 
 func authLoginCmd(provider string, useDeviceCode bool, useOauth bool, noBrowser bool) error {
@@ -69,14 +69,14 @@ func authLoginOpenAI(useDeviceCode bool, noBrowser bool) error {
 		// If no openai in ModelList, add it
 		if !foundOpenAI {
 			appCfg.ModelList = append(appCfg.ModelList, &config.ModelConfig{
-				ModelName:  "gpt-5.4",
-				Model:      "openai/gpt-5.4",
+				ModelName:  "gpt-5.6-terra",
+				Model:      "openai/gpt-5.6-terra",
 				AuthMethod: "oauth",
 			})
 		}
 
 		// Update default model to use OpenAI
-		appCfg.Agents.Defaults.ModelName = "gpt-5.4"
+		appCfg.Agents.Defaults.ModelName = "gpt-5.6-terra"
 
 		if err = config.SaveConfig(internal.GetConfigPath(), appCfg); err != nil {
 			return fmt.Errorf("could not update config: %w", err)
@@ -87,7 +87,7 @@ func authLoginOpenAI(useDeviceCode bool, noBrowser bool) error {
 	if cred.AccountID != "" {
 		fmt.Printf("Account: %s\n", cred.AccountID)
 	}
-	fmt.Println("Default model set to: gpt-5.4")
+	fmt.Println("Default model set to: gpt-5.6-terra")
 
 	return nil
 }
@@ -308,13 +308,13 @@ func authLoginPasteToken(provider string) error {
 			}
 			if !found {
 				appCfg.ModelList = append(appCfg.ModelList, &config.ModelConfig{
-					ModelName:  "gpt-5.4",
-					Model:      "openai/gpt-5.4",
+					ModelName:  "gpt-5.6-terra",
+					Model:      "openai/gpt-5.6-terra",
 					AuthMethod: "token",
 				})
 			}
 			// Update default model
-			appCfg.Agents.Defaults.ModelName = "gpt-5.4"
+			appCfg.Agents.Defaults.ModelName = "gpt-5.6-terra"
 		}
 		if err := config.SaveConfig(internal.GetConfigPath(), appCfg); err != nil {
 			return fmt.Errorf("could not update config: %w", err)

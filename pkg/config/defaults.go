@@ -70,33 +70,33 @@ func DefaultConfig() *Config {
 
 			// Zhipu AI (智谱) - https://open.bigmodel.cn/usercenter/apikeys
 			{
-				ModelName: "glm-4.7",
+				ModelName: "glm-5.2",
 				Provider:  "zhipu",
-				Model:     "glm-4.7",
+				Model:     "glm-5.2",
 				APIBase:   "https://open.bigmodel.cn/api/paas/v4",
 			},
 
 			// OpenAI - https://platform.openai.com/api-keys
 			{
-				ModelName: "gpt-5.4",
+				ModelName: "gpt-5.6-terra",
 				Provider:  "openai",
-				Model:     "gpt-5.4",
+				Model:     "gpt-5.6-terra",
 				APIBase:   "https://api.openai.com/v1",
 			},
 
 			// Anthropic Claude - https://console.anthropic.com/settings/keys
 			{
-				ModelName: "claude-sonnet-4.6",
+				ModelName: "claude-sonnet-5",
 				Provider:  "anthropic",
-				Model:     "claude-sonnet-4-6",
+				Model:     "claude-sonnet-5",
 				APIBase:   "https://api.anthropic.com/v1",
 			},
 
 			// DeepSeek - https://platform.deepseek.com/
 			{
-				ModelName: "deepseek-chat",
+				ModelName: "deepseek-v4-flash",
 				Provider:  "deepseek",
-				Model:     "deepseek-chat",
+				Model:     "deepseek-v4-flash",
 				APIBase:   "https://api.deepseek.com/v1",
 			},
 
@@ -126,17 +126,17 @@ func DefaultConfig() *Config {
 
 			// Qwen (通义千问) - https://dashscope.console.aliyun.com/apiKey
 			{
-				ModelName: "qwen-plus",
+				ModelName: "qwen3.7-plus",
 				Provider:  "qwen",
-				Model:     "qwen-plus",
+				Model:     "qwen3.7-plus",
 				APIBase:   "https://dashscope.aliyuncs.com/compatible-mode/v1",
 			},
 
 			// Moonshot (月之暗面) - https://platform.moonshot.cn/console/api-keys
 			{
-				ModelName: "moonshot-v1-8k",
+				ModelName: "kimi-k3",
 				Provider:  "moonshot",
-				Model:     "moonshot-v1-8k",
+				Model:     "kimi-k3",
 				APIBase:   "https://api.moonshot.cn/v1",
 			},
 
@@ -156,9 +156,9 @@ func DefaultConfig() *Config {
 				APIBase:   "https://openrouter.ai/api/v1",
 			},
 			{
-				ModelName: "openrouter-gpt-5.4",
+				ModelName: "openrouter-gpt-5.6-terra",
 				Provider:  "openrouter",
-				Model:     "openai/gpt-5.4",
+				Model:     "openai/gpt-5.6-terra",
 				APIBase:   "https://openrouter.ai/api/v1",
 			},
 
@@ -218,9 +218,9 @@ func DefaultConfig() *Config {
 
 			// GitHub Copilot - https://github.com/settings/tokens
 			{
-				ModelName:  "copilot-gpt-5.4",
+				ModelName:  "copilot-gpt-5.6-terra",
 				Provider:   "github-copilot",
-				Model:      "gpt-5.4",
+				Model:      "gpt-5.6-terra",
 				APIBase:    "http://localhost:4321",
 				AuthMethod: "oauth",
 			},
@@ -257,18 +257,18 @@ func DefaultConfig() *Config {
 
 			// Minimax - https://api.minimaxi.com/
 			{
-				ModelName: "MiniMax-M2.5",
+				ModelName: "MiniMax-M3",
 				Provider:  "minimax",
-				Model:     "MiniMax-M2.5",
+				Model:     "MiniMax-M3",
 				APIBase:   "https://api.minimaxi.com/v1",
 				ExtraBody: map[string]any{"reasoning_split": true},
 			},
 
 			// LongCat - https://longcat.chat/platform
 			{
-				ModelName: "LongCat-Flash-Thinking",
+				ModelName: "LongCat-2.0",
 				Provider:  "longcat",
-				Model:     "LongCat-Flash-Thinking",
+				Model:     "LongCat-2.0",
 				APIBase:   "https://api.longcat.chat/openai",
 			},
 

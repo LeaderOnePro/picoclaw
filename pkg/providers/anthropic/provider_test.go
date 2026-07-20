@@ -314,8 +314,8 @@ func TestProvider_ChatRoundTrip(t *testing.T) {
 
 func TestProvider_GetDefaultModel(t *testing.T) {
 	p := NewProvider("test-token")
-	if got := p.GetDefaultModel(); got != "claude-sonnet-4.6" {
-		t.Errorf("GetDefaultModel() = %q, want %q", got, "claude-sonnet-4.6")
+	if got := p.GetDefaultModel(); got != "claude-sonnet-5" {
+		t.Errorf("GetDefaultModel() = %q, want %q", got, "claude-sonnet-5")
 	}
 }
 

@@ -76,13 +76,13 @@ Este design também permite **suporte multi-agente** com seleção flexível de 
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
+      "model": "anthropic/claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -93,7 +93,7 @@ Este design também permite **suporte multi-agente** com seleção flexível de 
   ],
   "agents": {
     "defaults": {
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   }
 }
@@ -104,7 +104,7 @@ Este design também permite **suporte multi-agente** com seleção flexível de 
 | Campo | Tipo | Obrigatório | Descrição |
 |-------|------|-------------|-----------|
 | `model_name` | string | Sim | Nome único para referenciar este modelo na config do agent |
-| `model` | string | Sim | Identificador fornecedor/modelo (ex: `openai/gpt-5.4`, `azure/gpt-5.4`, `anthropic/claude-sonnet-4.6`) |
+| `model` | string | Sim | Identificador fornecedor/modelo (ex: `openai/gpt-5.6-terra`, `azure/gpt-5.6-terra`, `anthropic/claude-sonnet-5`) |
 | `api_keys` | string[] | Sim* | Chave(s) API para autenticação. Múltiplas chaves permitem rotação por requisição. Não necessário para providers locais (Ollama, LM Studio, VLLM) |
 | `api_base` | string | Não | Substitui a URL base da API padrão |
 | `proxy` | string | Não | URL do proxy HTTP para esta entrada de modelo |
@@ -126,8 +126,8 @@ Quando streaming estiver desativado, omita o bloco `streaming`. Escrever `"strea
 
 ```json
 {
-  "model_name": "gpt-5.4",
-  "model": "openai/gpt-5.4",
+  "model_name": "gpt-5.6-terra",
+  "model": "openai/gpt-5.6-terra",
   "api_keys": ["sk-..."]
 }
 ```
@@ -156,8 +156,8 @@ Quando streaming estiver desativado, omita o bloco `streaming`. Escrever `"strea
 
 ```json
 {
-  "model_name": "deepseek-chat",
-  "model": "deepseek/deepseek-chat",
+  "model_name": "deepseek-v4-flash",
+  "model": "deepseek/deepseek-v4-flash",
   "api_keys": ["sk-..."]
 }
 ```
@@ -166,8 +166,8 @@ Quando streaming estiver desativado, omita o bloco `streaming`. Escrever `"strea
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
-  "model": "anthropic/claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
+  "model": "anthropic/claude-sonnet-5",
   "api_keys": ["sk-ant-your-key"]
 }
 ```
@@ -237,14 +237,14 @@ Configure múltiplos endpoints para o mesmo nome de modelo — o PicoClaw fará 
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }
