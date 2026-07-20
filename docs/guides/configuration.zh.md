@@ -548,15 +548,15 @@ Agent 读取 HEARTBEAT.md
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
       "provider": "anthropic",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -568,7 +568,7 @@ Agent 读取 HEARTBEAT.md
   ],
   "agents": {
     "defaults": {
-      "model": "gpt-5.4"
+      "model": "gpt-5.6-terra"
     }
   }
 }
@@ -576,10 +576,10 @@ Agent 读取 HEARTBEAT.md
 
 解析规则：
 
-- 推荐显式写成 `"provider": "openai", "model": "gpt-5.4"`。
+- 推荐显式写成 `"provider": "openai", "model": "gpt-5.6-terra"`。
 - 如果设置了 `provider`，PicoClaw 会将 `model` 原样发送。
 - 如果未设置 `provider`，PicoClaw 会把 `model` 第一个 `/` 之前的字段当作 provider，并把第一个 `/` 之后的全部内容当作最终模型 ID。
-- 这意味着 `"model": "openrouter/openai/gpt-5.4"` 这样的兼容写法仍然可用，并会把 `openai/gpt-5.4` 发送给 OpenRouter。
+- 这意味着 `"model": "openrouter/openai/gpt-5.6-terra"` 这样的兼容写法仍然可用，并会把 `openai/gpt-5.6-terra` 发送给 OpenRouter。
 
 #### 流式输出配置
 
@@ -595,9 +595,9 @@ Provider 流式输出采用双开关，默认关闭。只有当前 channel 的 `
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"],
       "streaming": {
         "enabled": true
@@ -637,9 +637,9 @@ Telegram 旧环境变量仍兼容：`PICOCLAW_CHANNELS_TELEGRAM_STREAMING_ENABLE
 
 ```json
 {
-  "model_name": "gpt-5.4",
+  "model_name": "gpt-5.6-terra",
   "provider": "openai",
-  "model": "gpt-5.4",
+  "model": "gpt-5.6-terra",
   "api_keys": ["sk-..."]
 }
 ```
@@ -679,9 +679,9 @@ Telegram 旧环境变量仍兼容：`PICOCLAW_CHANNELS_TELEGRAM_STREAMING_ENABLE
 
 ```json
 {
-  "model_name": "deepseek-chat",
+  "model_name": "deepseek-v4-flash",
   "provider": "deepseek",
-  "model": "deepseek-chat",
+  "model": "deepseek-v4-flash",
   "api_keys": ["sk-..."]
 }
 ```
@@ -693,9 +693,9 @@ Telegram 旧环境变量仍兼容：`PICOCLAW_CHANNELS_TELEGRAM_STREAMING_ENABLE
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
   "provider": "anthropic",
-  "model": "claude-sonnet-4.6",
+  "model": "claude-sonnet-5",
   "api_keys": ["sk-ant-your-key"]
 }
 ```
@@ -772,16 +772,16 @@ Telegram 旧环境变量仍兼容：`PICOCLAW_CHANNELS_TELEGRAM_STREAMING_ENABLE
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }

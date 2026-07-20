@@ -29,7 +29,7 @@ available list online and pick one), use the 'add' subcommand:
 Examples:
   picoclaw model                    # Show current default model
   picoclaw model gpt-5.2           # Set gpt-5.2 as default
-  picoclaw model claude-sonnet-4.6 # Set claude-sonnet-4.6 as default
+  picoclaw model claude-sonnet-5   # Set claude-sonnet-5 as default
   picoclaw model local-model       # Set local VLLM server as default
   picoclaw model add -b URL -k KEY # Add a model from a custom endpoint
 

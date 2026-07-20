@@ -131,7 +131,7 @@ func (p *Provider) chatStreaming(
 }
 
 func (p *Provider) GetDefaultModel() string {
-	return "claude-sonnet-4.6"
+	return "claude-sonnet-5"
 }
 
 func (p *Provider) BaseURL() string {
@@ -221,8 +221,8 @@ func buildParams(
 		maxTokens = int64(mt)
 	}
 
-	// Normalize model ID: Anthropic API uses hyphens (claude-sonnet-4-6),
-	// but config may use dots (claude-sonnet-4.6).
+	// Normalize model ID: Anthropic API uses hyphens (claude-sonnet-5),
+	// but config may use dots (claude-sonnet-5).
 	apiModel := strings.ReplaceAll(model, ".", "-")
 
 	params := anthropic.MessageNewParams{

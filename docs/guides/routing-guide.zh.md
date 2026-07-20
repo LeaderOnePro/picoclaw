@@ -70,7 +70,7 @@ PicoClaw 里用户能直接感知到的“路由”主要有两部分：
     {
       "model_name": "gpt-main",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-main"]
     },
     {

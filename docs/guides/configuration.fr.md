@@ -398,8 +398,8 @@ Configurez plusieurs endpoints pour le même nom de modèle — PicoClaw effectu
 ```json
 {
   "model_list": [
-    { "model_name": "gpt-5.4", "model": "openai/gpt-5.4", "api_base": "https://api1.example.com/v1", "api_keys": ["sk-key1"] },
-    { "model_name": "gpt-5.4", "model": "openai/gpt-5.4", "api_base": "https://api2.example.com/v1", "api_keys": ["sk-key2"] }
+    { "model_name": "gpt-5.6-terra", "model": "openai/gpt-5.6-terra", "api_base": "https://api1.example.com/v1", "api_keys": ["sk-key1"] },
+    { "model_name": "gpt-5.6-terra", "model": "openai/gpt-5.6-terra", "api_base": "https://api2.example.com/v1", "api_keys": ["sk-key2"] }
   ]
 }
 ```
@@ -422,9 +422,9 @@ Exemple d'activation :
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"],
       "streaming": {
         "enabled": true

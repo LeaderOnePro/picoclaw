@@ -77,13 +77,13 @@
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
+      "model": "anthropic/claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -94,7 +94,7 @@
   ],
   "agents": {
     "defaults": {
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   }
 }
@@ -105,7 +105,7 @@
 | フィールド | 型 | 必須 | 説明 |
 |-----------|------|------|------|
 | `model_name` | string | はい | agent 設定でこのモデルを参照するための一意の名前 |
-| `model` | string | はい | ベンダー/モデル識別子（例：`openai/gpt-5.4`、`azure/gpt-5.4`、`anthropic/claude-sonnet-4.6`） |
+| `model` | string | はい | ベンダー/モデル識別子（例：`openai/gpt-5.6-terra`、`azure/gpt-5.6-terra`、`anthropic/claude-sonnet-5`） |
 | `api_keys` | string[] | はい* | 認証キー。複数キーでリクエストごとのローテーションが可能。ローカル provider（Ollama、LM Studio、VLLM）には不要 |
 | `api_base` | string | いいえ | デフォルトの API エンドポイント URL を上書き |
 | `proxy` | string | いいえ | このモデルエントリの HTTP プロキシ URL |
@@ -127,8 +127,8 @@
 
 ```json
 {
-  "model_name": "gpt-5.4",
-  "model": "openai/gpt-5.4",
+  "model_name": "gpt-5.6-terra",
+  "model": "openai/gpt-5.6-terra",
   "api_keys": ["sk-..."]
 }
 ```
@@ -168,8 +168,8 @@
 
 ```json
 {
-  "model_name": "deepseek-chat",
-  "model": "deepseek/deepseek-chat",
+  "model_name": "deepseek-v4-flash",
+  "model": "deepseek/deepseek-v4-flash",
   "api_keys": ["sk-..."]
 }
 ```
@@ -178,8 +178,8 @@
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
-  "model": "anthropic/claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
+  "model": "anthropic/claude-sonnet-5",
   "api_keys": ["sk-ant-your-key"]
 }
 ```
@@ -249,14 +249,14 @@ PicoClaw はリクエスト送信前に外側の `litellm/` プレフィック�
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }

@@ -84,7 +84,7 @@ picoclaw onboard
   "agents": {
     "defaults": {
       "workspace": "~/.picoclaw/workspace",
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "max_tokens": 8192,
       "temperature": 0.7,
       "max_tool_iterations": 20
@@ -99,16 +99,16 @@ picoclaw onboard
       "api_base":"https://ark.cn-beijing.volces.com/api/coding/v3"
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["your-api-key"],
       "request_timeout": 300
     },
     {
-      "model_name": "claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
       "provider": "anthropic",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
       "api_keys": ["your-anthropic-key"]
     }
   ],

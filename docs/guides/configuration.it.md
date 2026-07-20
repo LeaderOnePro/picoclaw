@@ -45,9 +45,9 @@ Esempio di attivazione:
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"],
       "streaming": {
         "enabled": true

@@ -90,15 +90,15 @@ This design also enables **multi-agent support** with flexible provider selectio
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
       "provider": "anthropic",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -110,7 +110,7 @@ This design also enables **multi-agent support** with flexible provider selectio
   ],
   "agents": {
     "defaults": {
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   }
 }
@@ -177,10 +177,10 @@ Examples:
 
 | Config | Resolved Provider | Model Sent Upstream |
 | --- | --- | --- |
-| `"provider": "openai", "model": "gpt-5.4"` | `openai` | `gpt-5.4` |
-| `"model": "openai/gpt-5.4"` | `openai` | `gpt-5.4` |
-| `"provider": "openrouter", "model": "openai/gpt-5.4"` | `openrouter` | `openai/gpt-5.4` |
-| `"model": "openrouter/openai/gpt-5.4"` | `openrouter` | `openai/gpt-5.4` |
+| `"provider": "openai", "model": "gpt-5.6-terra"` | `openai` | `gpt-5.6-terra` |
+| `"model": "openai/gpt-5.6-terra"` | `openai` | `gpt-5.6-terra` |
+| `"provider": "openrouter", "model": "openai/gpt-5.6-terra"` | `openrouter` | `openai/gpt-5.6-terra` |
+| `"model": "openrouter/openai/gpt-5.6-terra"` | `openrouter` | `openai/gpt-5.6-terra` |
 
 #### Voice Transcription
 
@@ -251,9 +251,9 @@ Notes that matter:
 
 ```json
 {
-  "model_name": "gpt-5.4",
+  "model_name": "gpt-5.6-terra",
   "provider": "openai",
-  "model": "gpt-5.4",
+  "model": "gpt-5.6-terra",
   "api_keys": ["sk-..."]
 }
 ```
@@ -307,9 +307,9 @@ Notes that matter:
 
 ```json
 {
-  "model_name": "deepseek-chat",
+  "model_name": "deepseek-v4-flash",
   "provider": "deepseek",
-  "model": "deepseek-chat",
+  "model": "deepseek-v4-flash",
   "api_keys": ["sk-..."]
 }
 ```
@@ -318,9 +318,9 @@ Notes that matter:
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
   "provider": "anthropic",
-  "model": "claude-sonnet-4.6",
+  "model": "claude-sonnet-5",
   "api_keys": ["sk-ant-your-key"]
 }
 ```
@@ -423,16 +423,16 @@ Configure multiple endpoints for the same model name—PicoClaw will automatical
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }
@@ -459,7 +459,7 @@ It also applies cooldown tracking per candidate to avoid immediately retrying a 
     {
       "model_name": "deepseek-backup",
       "provider": "deepseek",
-      "model": "deepseek-chat",
+      "model": "deepseek-v4-flash",
       "api_keys": ["sk-backup-1"]
     },
     {

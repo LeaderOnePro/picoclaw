@@ -40,7 +40,7 @@ The new `model_list` configuration offers several advantages:
   "agents": {
     "defaults": {
       "provider": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.6-terra"
     }
   }
 }
@@ -55,20 +55,20 @@ The new `model_list` configuration offers several advantages:
     {
       "model_name": "gpt4",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"],
       "api_base": "https://api.openai.com/v1"
     },
     {
-      "model_name": "claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
       "provider": "anthropic",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
       "model_name": "deepseek",
       "provider": "deepseek",
-      "model": "deepseek-chat",
+      "model": "deepseek-v4-flash",
       "api_keys": ["sk-your-deepseek-key"]
     }
   ],
@@ -89,7 +89,7 @@ Preferred format:
 ```json
 {
   "provider": "openai",
-  "model": "gpt-5.4"
+  "model": "gpt-5.6-terra"
 }
 ```
 
@@ -97,7 +97,7 @@ Legacy compatibility format:
 
 ```json
 {
-  "model": "openai/gpt-5.4"
+  "model": "openai/gpt-5.6-terra"
 }
 ```
 
@@ -110,8 +110,8 @@ Examples:
 
 | Config | Resolved Provider | Model Sent Upstream |
 |--------|-------------------|---------------------|
-| `"provider": "openai", "model": "gpt-5.4"` | `openai` | `gpt-5.4` |
-| `"model": "openai/gpt-5.4"` | `openai` | `gpt-5.4` |
+| `"provider": "openai", "model": "gpt-5.6-terra"` | `openai` | `gpt-5.6-terra` |
+| `"model": "openai/gpt-5.6-terra"` | `openai` | `gpt-5.6-terra` |
 | `"provider": "openrouter", "model": "google/gemini-2.0-flash-exp:free"` | `openrouter` | `google/gemini-2.0-flash-exp:free` |
 | `"model": "openrouter/google/gemini-2.0-flash-exp:free"` | `openrouter` | `google/gemini-2.0-flash-exp:free` |
 
@@ -146,7 +146,7 @@ There are two ways to configure load balancing:
     {
       "model_name": "gpt4",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-key1", "sk-key2", "sk-key3"],
       "api_base": "https://api.openai.com/v1"
     }
@@ -173,21 +173,21 @@ model_list:
     {
       "model_name": "gpt4",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-key1"],
       "api_base": "https://api1.example.com/v1"
     },
     {
       "model_name": "gpt4",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-key2"],
       "api_base": "https://api2.example.com/v1"
     },
     {
       "model_name": "gpt4",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-key3"],
       "api_base": "https://api3.example.com/v1"
     }

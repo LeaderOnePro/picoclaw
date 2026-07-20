@@ -49,7 +49,7 @@ Each OpenAI-compatible Provider requires:
   "agents": {
     "defaults": {
       "provider": "deepseek",  // need to know provider name
-      "model": "deepseek-chat"
+      "model": "deepseek-v4-flash"
     }
   }
 }
@@ -66,7 +66,7 @@ Problem: Agent needs to know both `provider` and `model`, adding complexity.
 Inspired by [LiteLLM](https://docs.litellm.ai/docs/proxy/configs) design:
 
 1. **Model-centric**: Users care about models, not providers
-2. **Protocol prefix**: Use `protocol/model_name` format, e.g., `openai/gpt-5.4`, `anthropic/claude-sonnet-4.6`
+2. **Protocol prefix**: Use `protocol/model_name` format, e.g., `openai/gpt-5.6-terra`, `anthropic/claude-sonnet-5`
 3. **Configuration-driven**: Adding new Providers only requires config changes, no code changes
 
 ### 2.2 New Configuration Structure
@@ -75,19 +75,19 @@ Inspired by [LiteLLM](https://docs.litellm.ai/docs/proxy/configs) design:
 {
   "model_list": [
     {
-      "model_name": "deepseek-chat",
-      "model": "openai/deepseek-chat",
+      "model_name": "deepseek-v4-flash",
+      "model": "openai/deepseek-v4-flash",
       "api_base": "https://api.deepseek.com/v1",
       "api_keys": ["sk-xxx"]
     },
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_keys": ["sk-xxx"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
+      "model": "anthropic/claude-sonnet-5",
       "api_keys": ["sk-xxx"]
     },
     {
@@ -105,7 +105,7 @@ Inspired by [LiteLLM](https://docs.litellm.ai/docs/proxy/configs) design:
 
   "agents": {
     "defaults": {
-      "model": "deepseek-chat",
+      "model": "deepseek-v4-flash",
       "max_tokens": 8192,
       "temperature": 0.7
     }
@@ -128,7 +128,7 @@ type Config struct {
 type ModelConfig struct {
     // Required
     ModelName string `json:"model_name"`  // user-facing name (alias)
-    Model     string `json:"model"`       // protocol/model, e.g., openai/gpt-5.4
+    Model     string `json:"model"`       // protocol/model, e.g., openai/gpt-5.6-terra
 
     // Common config
     APIBase   string `json:"api_base,omitempty"`
@@ -177,14 +177,14 @@ Identify protocol via prefix in `model` field:
 
   "agents": {
     "defaults": {
-      "model": "deepseek-chat"
+      "model": "deepseek-v4-flash"
     },
     "coder": {
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "system_prompt": "You are a coding assistant..."
     },
     "translator": {
-      "model": "claude-sonnet-4.6"
+      "model": "claude-sonnet-5"
     }
   }
 }
@@ -200,7 +200,7 @@ Each Agent only needs to specify `model` (corresponds to `model_name` in `model_
 model_list:
   - model_name: gpt-4o
     litellm_params:
-      model: openai/gpt-5.4
+      model: openai/gpt-5.6-terra
       api_key: xxx
   - model_name: my-custom
     litellm_params:
@@ -259,7 +259,7 @@ func (c *Config) GetModelConfig(modelName string) (*ModelConfig, error) {
   "agents": {
     "defaults": {
       "provider": "deepseek",
-      "model": "deepseek-chat"
+      "model": "deepseek-v4-flash"
     }
   }
 }
@@ -270,15 +270,15 @@ func (c *Config) GetModelConfig(modelName string) (*ModelConfig, error) {
 {
   "model_list": [
     {
-      "model_name": "deepseek-chat",
-      "model": "openai/deepseek-chat",
+      "model_name": "deepseek-v4-flash",
+      "model": "openai/deepseek-v4-flash",
       "api_base": "https://api.deepseek.com/v1",
       "api_key": "sk-xxx"
     }
   ],
   "agents": {
     "defaults": {
-      "model": "deepseek-chat"
+      "model": "deepseek-v4-flash"
     }
   }
 }

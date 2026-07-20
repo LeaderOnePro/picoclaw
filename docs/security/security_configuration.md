@@ -37,11 +37,11 @@ The security configuration works through **direct field mapping**, NOT through `
 # All models MUST use `api_keys` (plural) array format
 # Even a single key must be provided as an array with one element
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "sk-proj-your-actual-openai-key-1"
       - "sk-proj-your-actual-openai-key-2"  # Optional: Multiple keys for failover
-  claude-sonnet-4.6:
+  claude-sonnet-5:
     api_keys:
       - "sk-ant-your-actual-anthropic-key"  # Single key in array format
 
@@ -149,8 +149,8 @@ You can now remove sensitive fields from `config.json` since they're loaded from
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api.openai.com/v1",
       "api_keys": ["sk-your-actual-api-key-here"]
     }
@@ -170,8 +170,8 @@ You can now remove sensitive fields from `config.json` since they're loaded from
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api.openai.com/v1"
       // api_key is now loaded from .security.yml
     }
@@ -209,7 +209,7 @@ model_list:
 **Mapping:**
 - Field `api_keys` (array) maps to the model's API keys
 - The `<model_name>` must match the `model_name` field in `config.json`
-- Supports indexed names (e.g., "gpt-5.4:0") - the system will also try the base name ("gpt-5.4")
+- Supports indexed names (e.g., "gpt-5.6-terra:0") - the system will also try the base name ("gpt-5.6-terra")
 
 ### Channels
 
@@ -295,7 +295,7 @@ skills:
 Use array format with one element:
 ```yaml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "sk-your-key"
 ```
@@ -305,7 +305,7 @@ model_list:
 Use array format with multiple elements:
 ```yaml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "sk-your-key-1"
       - "sk-your-key-2"
@@ -363,14 +363,14 @@ The system supports intelligent model name matching in `.security.yml`:
 **config.json:**
 ```json
 {
-  "model_name": "gpt-5.4:0"
+  "model_name": "gpt-5.6-terra:0"
 }
 ```
 
 **.security.yml (exact match with index):**
 ```yaml
 model_list:
-  gpt-5.4:0:
+  gpt-5.6-terra:0:
     api_keys: ["key-1"]
 ```
 
@@ -379,14 +379,14 @@ model_list:
 **config.json:**
 ```json
 {
-  "model_name": "gpt-5.4:0"
+  "model_name": "gpt-5.6-terra:0"
 }
 ```
 
 **.security.yml (base name without index):**
 ```yaml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys: ["key-1", "key-2"]
 ```
 
@@ -480,18 +480,18 @@ Returns the path to `.security.yml` relative to the config file.
   "agents": {
     "defaults": {
       "workspace": "~/picoclaw-workspace",
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   },
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "api_base": "https://api.openai.com/v1"
     },
     {
-      "model_name": "claude-sonnet-4.6",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
+      "model": "anthropic/claude-sonnet-5",
       "api_base": "https://api.anthropic.com/v1"
     }
   ],
@@ -515,11 +515,11 @@ Returns the path to `.security.yml` relative to the config file.
 
 ```yaml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "sk-proj-actual-openai-key-1"
       - "sk-proj-actual-openai-key-2"
-  claude-sonnet-4.6:
+  claude-sonnet-5:
     api_keys:
       - "sk-ant-actual-anthropic-key"
 
@@ -561,7 +561,7 @@ go test ./pkg/config -run TestSecurityConfig
 
 - Ensure the model name in `config.json` matches exactly in `.security.yml`
 - Check that the `model_list` section exists in `.security.yml`
-- For models with indexed names (e.g., "gpt-5.4:0"), ensure the exact name is used or check the base name without index
+- For models with indexed names (e.g., "gpt-5.6-terra:0"), ensure the exact name is used or check the base name without index
 - Verify the YAML structure is correct (proper indentation)
 
 ### Multiple API Keys Not Working
@@ -660,7 +660,7 @@ SaveConfig(path, config)
 Encrypted keys are stored as:
 ```yaml
 model_list:
-  gpt-5.4:
+  gpt-5.6-terra:
     api_keys:
       - "enc://encrypted-base64-string"
 ```

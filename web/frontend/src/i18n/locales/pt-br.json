@@ -279,7 +279,7 @@
       "modelNameHint": "Um nome curto usado para identificar este modelo nas conversas.",
       "modelId": "Identificador do Modelo",
       "modelIdPlaceholder": "ex: gpt-4o ou openai/gpt-4o",
-      "modelIdHint": "Este campo é tratado como o ID canônico do modelo para o provedor selecionado. Se o próprio identificador contiver uma barra, como openai/gpt-5.4, ele será preservado como está e não será dividido novamente.",
+      "modelIdHint": "Este campo é tratado como o ID canônico do modelo para o provedor selecionado. Se o próprio identificador contiver uma barra, como openai/gpt-5.6-terra, ele será preservado como está e não será dividido novamente.",
       "errorRequired": "Este campo é obrigatório.",
       "errorDuplicateModelName": "Apelido de modelo já existe. Use um nome diferente.",
       "saveError": "Falha ao adicionar modelo",

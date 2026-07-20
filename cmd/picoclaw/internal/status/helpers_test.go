@@ -48,7 +48,7 @@ func TestStatusCmd_RecognizesProviderFieldWithoutModelPrefix(t *testing.T) {
 	cfg := &config.Config{
 		Agents: config.AgentsConfig{
 			Defaults: config.AgentDefaults{
-				ModelName:   "gpt-5.4",
+				ModelName:   "gpt-5.6-terra",
 				Workspace:   workspace,
 				Provider:    "openai",
 				MaxTokens:   65536,
@@ -57,9 +57,9 @@ func TestStatusCmd_RecognizesProviderFieldWithoutModelPrefix(t *testing.T) {
 		},
 		ModelList: []*config.ModelConfig{
 			{
-				ModelName: "gpt-5.4",
+				ModelName: "gpt-5.6-terra",
 				Provider:  "openai",
-				Model:     "gpt-5.4",
+				Model:     "gpt-5.6-terra",
 				APIBase:   "https://api.openai.com/v1",
 				APIKeys:   config.SimpleSecureStrings("test-key"),
 				Enabled:   true,

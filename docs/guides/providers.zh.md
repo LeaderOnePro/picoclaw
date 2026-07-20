@@ -85,15 +85,15 @@
       "api_keys": ["sk-your-api-key"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_keys": ["sk-your-openai-key"]
     },
     {
-      "model_name": "claude-sonnet-4.6",
+      "model_name": "claude-sonnet-5",
       "provider": "anthropic",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
       "api_keys": ["sk-ant-your-key"]
     },
     {
@@ -105,7 +105,7 @@
   ],
   "agents": {
     "defaults": {
-      "model_name": "gpt-5.4"
+      "model_name": "gpt-5.6-terra"
     }
   }
 }
@@ -145,10 +145,10 @@ PicoClaw 按下面的规则解析 `provider` 和最终发给上游的模型 ID�
 
 | 配置 | 解析后的 Provider | 实际发送的模型 ID |
 | --- | --- | --- |
-| `"provider": "openai", "model": "gpt-5.4"` | `openai` | `gpt-5.4` |
-| `"model": "openai/gpt-5.4"` | `openai` | `gpt-5.4` |
-| `"provider": "openrouter", "model": "openai/gpt-5.4"` | `openrouter` | `openai/gpt-5.4` |
-| `"model": "openrouter/openai/gpt-5.4"` | `openrouter` | `openai/gpt-5.4` |
+| `"provider": "openai", "model": "gpt-5.6-terra"` | `openai` | `gpt-5.6-terra` |
+| `"model": "openai/gpt-5.6-terra"` | `openai` | `gpt-5.6-terra` |
+| `"provider": "openrouter", "model": "openai/gpt-5.6-terra"` | `openrouter` | `openai/gpt-5.6-terra` |
+| `"model": "openrouter/openai/gpt-5.6-terra"` | `openrouter` | `openai/gpt-5.6-terra` |
 
 #### 语音转录
 
@@ -184,9 +184,9 @@ PicoClaw 按下面的规则解析 `provider` 和最终发给上游的模型 ID�
 
 ```json
 {
-  "model_name": "gpt-5.4",
+  "model_name": "gpt-5.6-terra",
   "provider": "openai",
-  "model": "gpt-5.4",
+  "model": "gpt-5.6-terra",
   "api_keys": ["sk-..."]
 }
 ```
@@ -217,9 +217,9 @@ PicoClaw 按下面的规则解析 `provider` 和最终发给上游的模型 ID�
 
 ```json
 {
-  "model_name": "deepseek-chat",
+  "model_name": "deepseek-v4-flash",
   "provider": "deepseek",
-  "model": "deepseek-chat",
+  "model": "deepseek-v4-flash",
   "api_keys": ["sk-..."]
 }
 ```
@@ -228,9 +228,9 @@ PicoClaw 按下面的规则解析 `provider` 和最终发给上游的模型 ID�
 
 ```json
 {
-  "model_name": "claude-sonnet-4.6",
+  "model_name": "claude-sonnet-5",
   "provider": "anthropic",
-  "model": "claude-sonnet-4.6",
+  "model": "claude-sonnet-5",
   "auth_method": "oauth"
 }
 ```
@@ -317,16 +317,16 @@ PicoClaw 按下面的规则解析 `provider` 和最终发给上游的模型 ID�
 {
   "model_list": [
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api1.example.com/v1",
       "api_keys": ["sk-key1"]
     },
     {
-      "model_name": "gpt-5.4",
+      "model_name": "gpt-5.6-terra",
       "provider": "openai",
-      "model": "gpt-5.4",
+      "model": "gpt-5.6-terra",
       "api_base": "https://api2.example.com/v1",
       "api_keys": ["sk-key2"]
     }
@@ -353,7 +353,7 @@ PicoClaw 按下面的规则解析 `provider` 和最终发给上游的模型 ID�
     {
       "model_name": "deepseek-backup",
       "provider": "deepseek",
-      "model": "deepseek-chat",
+      "model": "deepseek-v4-flash",
       "api_keys": ["sk-backup-1"]
     },
     {

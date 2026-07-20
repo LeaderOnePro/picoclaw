@@ -279,7 +279,7 @@
       "modelNameHint": "用于在对话中识别此模型的简短名称。",
       "modelId": "模型标识符",
       "modelIdPlaceholder": "例如 gpt-4o 或 openai/gpt-4o",
-      "modelIdHint": "此字段将作为所选 Provider 的规范模型 ID 使用。若模型标识符本身包含斜杠（如 openai/gpt-5.4），将作为完整 ID 保留，不会再次拆分 Provider。",
+      "modelIdHint": "此字段将作为所选 Provider 的规范模型 ID 使用。若模型标识符本身包含斜杠（如 openai/gpt-5.6-terra），将作为完整 ID 保留，不会再次拆分 Provider。",
       "errorRequired": "此字段为必填项。",
       "errorDuplicateModelName": "模型别名已存在，请使用其他名称。",
       "saveError": "添加模型失败",

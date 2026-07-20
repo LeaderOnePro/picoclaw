@@ -231,8 +231,8 @@ Old config (version 3):
   "version": 3,
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4"
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra"
     }
   ]
 }
@@ -257,8 +257,8 @@ New config (version 3):
   "version": 3,
   "model_list": [
     {
-      "model_name": "gpt-5.4",
-      "model": "openai/gpt-5.4",
+      "model_name": "gpt-5.6-terra",
+      "model": "openai/gpt-5.6-terra",
       "new_option": true
     }
   ]
